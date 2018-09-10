@@ -1,0 +1,25 @@
+# range of 25 data
+data <- read.csv('D:/SOFTWARE/R/dataset from textbook/3.4.csv',header = FALSE)
+range=max(data)-min(data)
+
+
+# generate frequency histogram
+data<-unlist(data)
+bins<- seq(0.705,1.055,by=0.05)
+a<- cut(data,bins)
+table(a)
+hist(data,breaks=bins)   
+
+# relative frequency (the fraction of times an answer occurs)
+data1<-data/sum(data)
+bins1<-bins/sum(data)
+a1<-cut(data1,bins1)
+table(a1)
+hist(data1,bins1)
+
+# 
+prob<-(2+4+8+4)/20 #prob=0.9
+# so 10% that the fluoide reading would be greater than .90
+# so 1/10 of days in the coming year will have a fluoide reading greater than 0.9
+
+
